@@ -2,7 +2,7 @@
 #define PEDIDOS_SALAO_H
 
 typedef struct Prato {
-    char nome[50];
+    int id;  // Número do prato
     struct Prato *prox;
 } Prato;
 
@@ -13,7 +13,8 @@ typedef struct Pedido {
 } Pedido;
 
 void adicionarPedido(Pedido **cabeca, int id);
-void removerPrato(Pedido *pedido, const char *nome_prato);
+void adicionarPrato(Pedido *pedido, int prato_id);
+void removerPrato(Pedido *pedido, int prato_id);
 void listarPedidos(Pedido *cabeca);
 Pedido* processarPedido(Pedido **cabeca);
 
