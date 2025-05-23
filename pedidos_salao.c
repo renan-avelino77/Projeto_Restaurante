@@ -25,12 +25,11 @@ void removerPrato(Pedido *pedido, int prato_id) {
             Prato *temp = *ptr;
             *ptr = temp->prox;
             free(temp);
-            printf("Prato '%s' removido.\n", nomeDoPrato(prato_id));
-            return;
+            
         }
         ptr = &((*ptr)->prox);
     }
-    printf("Prato '%s' não encontrado.\n", nomeDoPrato(prato_id));
+    printf("Prato '%d' não encontrado.\n", nomePrato(prato_id));
 }
 
 void listarPedidos(Pedido *cabeca) {
@@ -38,7 +37,7 @@ void listarPedidos(Pedido *cabeca) {
         printf("Pedido ID: %d\n", cabeca->id);
         Prato *p = cabeca->pratos;
         while (p != NULL) {
-            printf(" - %s\n", nomeDoPrato(p->id));
+            printf(" - %d\n", nomePrato(p->id));
             p = p->prox;
         }
         cabeca = cabeca->prox;

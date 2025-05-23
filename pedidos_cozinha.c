@@ -38,7 +38,7 @@ void listarFila(Fila *fila) {
         printf("Pedido em processamento ID: %d\n", atual->pedido->id);
         Prato *p = atual->pedido->pratos;
         while (p != NULL) {
-            printf(" - %s\n", p->id);
+            printf(" - %d\n", p->id);
             p = p->prox;
         }
         atual = atual->prox;
